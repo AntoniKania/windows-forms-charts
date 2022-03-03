@@ -1,0 +1,11 @@
+C:\Users\Antek\Documents\Visual Studio Code\windows-forms-charts\charts\bin\Debug\charts.exe.config
+C:\Users\Antek\Documents\Visual Studio Code\windows-forms-charts\charts\bin\Debug\charts.exe
+C:\Users\Antek\Documents\Visual Studio Code\windows-forms-charts\charts\bin\Debug\charts.pdb
+C:\Users\Antek\Documents\Visual Studio Code\windows-forms-charts\charts\obj\Debug\charts.csproj.AssemblyReference.cache
+C:\Users\Antek\Documents\Visual Studio Code\windows-forms-charts\charts\obj\Debug\charts.csproj.SuggestedBindingRedirects.cache
+C:\Users\Antek\Documents\Visual Studio Code\windows-forms-charts\charts\obj\Debug\charts.Form1.resources
+C:\Users\Antek\Documents\Visual Studio Code\windows-forms-charts\charts\obj\Debug\charts.Properties.Resources.resources
+C:\Users\Antek\Documents\Visual Studio Code\windows-forms-charts\charts\obj\Debug\charts.csproj.GenerateResource.cache
+C:\Users\Antek\Documents\Visual Studio Code\windows-forms-charts\charts\obj\Debug\charts.csproj.CoreCompileInputs.cache
+C:\Users\Antek\Documents\Visual Studio Code\windows-forms-charts\charts\obj\Debug\charts.exe
+C:\Users\Antek\Documents\Visual Studio Code\windows-forms-charts\charts\obj\Debug\charts.pdb
