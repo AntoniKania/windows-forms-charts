@@ -15,14 +15,16 @@ namespace charts
 {
     public partial class Wykres : Form
     {
-        public static ArrayList samples = new ArrayList();
-        public Wykres(ArrayList data)
+        List<double> samples = new List<double>();
+        public static string title;
+        public Wykres(List<double> data, string text)
         {
             samples = data;
             InitializeComponent();
-            Series s1, s2;
+            Series s1; //s2;
             s1 = chart1.Series[0];
             s1.Points.AddXY(1, 12);
+            title = text;
             //s2 = chart1.Series[1];
             //ArrayList listDataSource = new ArrayList();
 
@@ -33,6 +35,7 @@ namespace charts
         {
             Series s1, s2;
             s1 = chart1.Series["Series1"];
+            s1.LabelToolTip = title;
             s1.Points.AddXY(1, 12);
             //s2 = chart1.Series[1];
             //ArrayList listDataSource = new ArrayList();

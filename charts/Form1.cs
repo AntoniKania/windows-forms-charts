@@ -18,7 +18,12 @@ namespace charts
     {
         //public static double[] samples = new double[100];
         
-        public static ArrayList samples = new ArrayList();
+        //public static ArrayList samples = new ArrayList();
+        List<double> samples = new List<double>();
+        public static string title = "title form1";
+        public static double sum;
+        public static double pom;
+        public static int accuracy = 4;
         public Form1()
         {
             InitializeComponent();
@@ -40,39 +45,23 @@ namespace charts
                             label1.Text = "Wczytano pliki!";
                             button2.Enabled = true;
                             string file = File.ReadAllText(openFileDialog1.FileName);
-                            string title = "Wykres Pomiarów";
-                            /*
-                            for (int i = 0; i < file.Length; i++)
-                            {
-                                if (file[i] != ";")
-                                    title[i] = file[i];
-                                else
-                                    break;
-                            }
-                            double[] samples = file.Split(',').Select(double.Parse).ToArray();
-                            */
+
+
                             string[] readData = file.Split(';').ToArray();
-                            int n = 0;
-                            
                             double number;
-                            //label2.Text += s;
-                            if(!double.TryParse(readData[0], out number))
-                            {
+
+                            
+
+                            if (!double.TryParse(readData[0], out number))
                                 title = readData[0];
-                                n++;
-                            }
                             
-                            
-                            for(int i = 0; i < readData.Length - n; i++)
+                            for(int i = 0; i < readData.Length - 1; i++)
                             {
-                                double.TryParse(readData[i], out number);
-                                samples.Add(number);
+                                if(double.TryParse(readData[i], out number))
+                                    samples.Add(number);
                             }
 
-                            label2.Text = title + "\n";
-                            for(int z = 0; z < samples.Count; z++)
-                                label2.Text += samples[z] + "\n";
-
+                            calculateValues();
                         }
                     }
                 }
@@ -86,8 +75,37 @@ namespace charts
 
         private void button2_MouseClick(object sender, MouseEventArgs e)
         {
-            Wykres wykres = new Wykres(samples);
+            Wykres wykres = new Wykres(samples, title);
             wykres.Show();
         }
+        public void calculateValues()
+        {
+            double average, maxValue, minValue, variance;
+            int quantity = samples.Count;
+
+            for (int i = 0; i < samples.Count; i++)
+            {
+                sum += samples[i];
+            }
+            average = Math.Round(sum / samples.Count, accuracy);
+            samples.Sort();
+            maxValue = Math.Round(samples[samples.Count - 1], accuracy);
+            minValue = Math.Round(samples[0], accuracy);
+
+            for(int j = 0; j < samples.Count; j++)
+            {
+                pom += Math.Pow(samples[j] - average, 2);
+            }
+            variance = Math.Round(pom / samples.Count, accuracy);
+
+            textBoxQuantity.Text = quantity.ToString();
+            textBoxAverage.Text = average.ToString();
+            textBoxvVariance.Text = variance.ToString();
+            textBoxMaxValue.Text = maxValue.ToString();
+            textBoxMinValues.Text = minValue.ToString();
+            
+        }
+
+        
     }
 }
