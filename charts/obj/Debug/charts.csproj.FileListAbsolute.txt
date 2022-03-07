@@ -24,3 +24,7 @@ C:\Users\Antek Kania\Documents\Visual Studio Code\windows-forms-charts\charts\ob
 C:\Users\Antek Kania\Documents\Visual Studio Code\windows-forms-charts\charts\bin\Debug\ChartControls.dll
 C:\Users\Antek Kania\Documents\Visual Studio Code\windows-forms-charts\charts\bin\Debug\ChartControls.xml
 C:\Users\Antek Kania\Documents\Visual Studio Code\windows-forms-charts\charts\obj\Debug\charts.csproj.CopyComplete
+C:\Users\Antek\Documents\Visual Studio Code\windows-forms-charts\charts\bin\Debug\ChartControls.dll
+C:\Users\Antek\Documents\Visual Studio Code\windows-forms-charts\charts\bin\Debug\ChartControls.xml
+C:\Users\Antek\Documents\Visual Studio Code\windows-forms-charts\charts\obj\Debug\charts.Wykres.resources
+C:\Users\Antek\Documents\Visual Studio Code\windows-forms-charts\charts\obj\Debug\charts.csproj.CopyComplete

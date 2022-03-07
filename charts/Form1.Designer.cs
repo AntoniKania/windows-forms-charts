@@ -44,16 +44,20 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(40, 41);
+            this.button1.Location = new System.Drawing.Point(586, 38);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(120, 23);
             this.button1.TabIndex = 0;
-            this.button1.Text = "Wczytaj plik";
+            this.button1.Text = "Otwórz...";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -64,7 +68,8 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(40, 87);
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(579, 49);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(109, 13);
             this.label1.TabIndex = 1;
@@ -73,7 +78,7 @@
             // button2
             // 
             this.button2.Enabled = false;
-            this.button2.Location = new System.Drawing.Point(40, 129);
+            this.button2.Location = new System.Drawing.Point(574, 23);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(120, 23);
             this.button2.TabIndex = 2;
@@ -185,19 +190,51 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Ilość pomiarów:";
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Controls.Add(this.button2);
+            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Location = new System.Drawing.Point(12, 87);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(776, 88);
+            this.groupBox2.TabIndex = 5;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Prezentacja wczytanych próbek";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(23, 43);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(169, 13);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Wczytaj plik z wynikami pomiarów:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(14, 28);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(102, 13);
+            this.label8.TabIndex = 3;
+            this.label8.Text = "Otwórz na wykresie:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.button1);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
             this.Text = "Analizator wyników pomiarów temperatury";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -221,6 +258,9 @@
         private System.Windows.Forms.TextBox textBoxMaxValue;
         private System.Windows.Forms.TextBox textBoxvVariance;
         private System.Windows.Forms.TextBox textBoxQuantity;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label8;
     }
 }
 
