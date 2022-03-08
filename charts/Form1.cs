@@ -42,6 +42,8 @@ namespace charts
                     {
                         using (myStream)
                         {
+                            button1.AccessibleRole = AccessibleRole.None;
+                            button3.AccessibleRole = AccessibleRole.Default;
                             label1.Text = "Wczytano pliki!";
                             button2.Enabled = true;
                             string file = File.ReadAllText(openFileDialog1.FileName);
@@ -106,6 +108,18 @@ namespace charts
             
         }
 
-        
+        private void button3_Click(object sender, EventArgs e)
+        {
+            using (var sfd = new SaveFileDialog())
+            {
+                sfd.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+                sfd.FilterIndex = 2;
+
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    //File.WriteAllText(sfd.FileName, textBox_ListDestination.Text);
+                }
+            }
+        }
     }
 }

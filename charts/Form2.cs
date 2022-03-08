@@ -15,51 +15,50 @@ namespace charts
 {
     public partial class Wykres : Form
     {
+        public static Legend legend;
         List<double> samples = new List<double>();
         public static string title;
         public Wykres(List<double> data, string text)
         {
             samples = data;
             InitializeComponent();
-            Series s1; //s2;
-            s1 = chart1.Series[0];
-            s1.Points.AddXY(1, 12);
             title = text;
             //s2 = chart1.Series[1];
             //ArrayList listDataSource = new ArrayList();
 
+            
+        }
+
+        private void Wykres_Load(object sender, EventArgs e)
+        {
+            legend = chart1.Legends["Legend1"];
+            Series s1, s2;
+            s1 = chart1.Series["Odczyt Temperatur"];
+            s2 = chart1.Series["Różnica Temperatur"];
+            s1.LabelToolTip = title;
             for (int x = 0; x < samples.Count; x++)
                 s1.Points.AddXY(x + 1, samples[x]);
+            for(int x2 = 1; x2 < samples.Count; x2++)
+                s2.Points.AddXY(x2, samples[x2]-samples[x2-1]);
+
         }
-        private void Form1_Load(object sender, EventArgs e)
+
+        private void button1_Click(object sender, EventArgs e)
         {
-            Series s1, s2;
-            s1 = chart1.Series["Series1"];
-            s1.LabelToolTip = title;
-            s1.Points.AddXY(1, 12);
-            //s2 = chart1.Series[1];
-            //ArrayList listDataSource = new ArrayList();
-
-            //for (int x = 0; x < samples.Capacity; x++)
-                //s2.Points.AddXY(x, samples[x]);
-
-
-            /*
-            //ChartControl myChart = chartControl1;
-            myChart.DataSource = samples;
-
-            // Create a series, and add it to the chart.
-            Series series1 = new Series("My Series", ViewType.Bar);
-            myChart.Series.Add(series1);
-
-            // Adjust the series data members.
-            series1.ArgumentDataMember = "name";
-            series1.ValueDataMembers.AddRange(new string[] { "age" });
-
-            // Access the view-type-specific options of the series.
-            ((BarSeriesView)series1.View).ColorEach = true;
-            series1.LegendPointOptions.Pattern = "{A}";
-            */
+            
+            if (legend.Enabled = true)
+            {
+                legend.Enabled = false;
+                button1.Text = "Pokaż Legendę";
+            }
+                
+            else
+            {
+                legend.Enabled = true;
+                button1.Text = "Ukryj Legendę";
+            }
+                
+            
         }
     }
 }
