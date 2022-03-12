@@ -99,9 +99,10 @@ namespace charts
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //chartArea.AxisX.IntervalOffset += 10;
-            chartArea.AxisX2.IntervalOffset += 10;
-            //chartArea.AxisX2.IntervalOffset += 10;
+            chartArea.AxisX.MinorGrid.Enabled = true;
+            chartArea.AxisY.MinorGrid.Enabled = true;
+            //chartArea.AxisX.Crossing += 2;
+          
         }
 
         private void VerticalMenuItem3_Click(object sender, EventArgs e)
@@ -121,9 +122,25 @@ namespace charts
             }
         }
 
-        
+        private void VerticalMenuItem4_Click(object sender, EventArgs e)
+        {
+            if(chartArea.AxisX.MinorGrid.Enabled == false)
+            {
+                chartArea.AxisX.MinorGrid.Enabled = true;
+                chartArea.AxisY.MinorGrid.Enabled = true;
+            }
+            else
+            {
+                chartArea.AxisX.MinorGrid.Enabled = false;
+                chartArea.AxisY.MinorGrid.Enabled = false;
+            }
+        }
 
-        
+
+
+
+
+
 
 
     }

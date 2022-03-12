@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.plikToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -47,6 +47,7 @@
             this.VerticalMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.VerticalMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new System.Windows.Forms.Button();
+            this.VerticalMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.menuStrip2.SuspendLayout();
@@ -54,35 +55,38 @@
             // 
             // chart1
             // 
-            chartArea3.AxisX.MajorGrid.Interval = 0D;
-            chartArea3.AxisX.MajorGrid.IntervalOffset = 0D;
-            chartArea3.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea3);
+            chartArea2.AxisX.MajorGrid.Interval = 0D;
+            chartArea2.AxisX.MajorGrid.IntervalOffset = 0D;
+            chartArea2.AxisX.MinorGrid.LineColor = System.Drawing.Color.Gainsboro;
+            chartArea2.AxisY.MinorGrid.LineColor = System.Drawing.Color.Gainsboro;
+            chartArea2.AxisY.MinorTickMark.LineColor = System.Drawing.Color.Gainsboro;
+            chartArea2.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea2);
             this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend3.Alignment = System.Drawing.StringAlignment.Far;
-            legend3.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
-            legend3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            legend3.IsTextAutoFit = false;
-            legend3.Name = "Legend1";
-            this.chart1.Legends.Add(legend3);
+            legend2.Alignment = System.Drawing.StringAlignment.Far;
+            legend2.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
+            legend2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            legend2.IsTextAutoFit = false;
+            legend2.Name = "Legend1";
+            this.chart1.Legends.Add(legend2);
             this.chart1.Location = new System.Drawing.Point(0, 27);
             this.chart1.Name = "chart1";
-            series5.ChartArea = "ChartArea1";
-            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series5.Legend = "Legend1";
-            series5.Name = "Odczyt Temperatur";
-            series6.ChartArea = "ChartArea1";
-            series6.Legend = "Legend1";
-            series6.Name = "Różnica Temperatur";
-            this.chart1.Series.Add(series5);
-            this.chart1.Series.Add(series6);
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series3.Legend = "Legend1";
+            series3.Name = "Odczyt Temperatur";
+            series4.ChartArea = "ChartArea1";
+            series4.Legend = "Legend1";
+            series4.Name = "Różnica Temperatur";
+            this.chart1.Series.Add(series3);
+            this.chart1.Series.Add(series4);
             this.chart1.Size = new System.Drawing.Size(982, 530);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "title";
-            title3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            title3.Name = "Wykres Pomiarów";
-            title3.Text = "Wykresy Pomiarów";
-            this.chart1.Titles.Add(title3);
+            title2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            title2.Name = "Wykres Pomiarów";
+            title2.Text = "Wykresy Pomiarów";
+            this.chart1.Titles.Add(title2);
             // 
             // menuStrip1
             // 
@@ -156,7 +160,8 @@
             this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.VerticalMenuItem1,
             this.VerticalMenuItem2,
-            this.VerticalMenuItem3});
+            this.VerticalMenuItem3,
+            this.VerticalMenuItem4});
             this.menuStrip2.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Table;
             this.menuStrip2.Location = new System.Drawing.Point(982, 0);
             this.menuStrip2.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
@@ -197,7 +202,7 @@
             this.VerticalMenuItem3.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.VerticalMenuItem3.AutoSize = false;
             this.VerticalMenuItem3.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.VerticalMenuItem3.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.VerticalMenuItem3.Margin = new System.Windows.Forms.Padding(0, 0, 10, 20);
             this.VerticalMenuItem3.MergeIndex = 10;
             this.VerticalMenuItem3.Name = "VerticalMenuItem3";
             this.VerticalMenuItem3.Size = new System.Drawing.Size(183, 39);
@@ -213,6 +218,13 @@
             this.button1.Text = "+";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // VerticalMenuItem4
+            // 
+            this.VerticalMenuItem4.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.VerticalMenuItem4.Name = "VerticalMenuItem4";
+            this.VerticalMenuItem4.Size = new System.Drawing.Size(113, 19);
+            this.VerticalMenuItem4.Text = "Zwiększ podziałke";
             // 
             // Wykres
             // 
@@ -253,5 +265,6 @@
         private System.Windows.Forms.ToolStripMenuItem VerticalMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem VerticalMenuItem3;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ToolStripMenuItem VerticalMenuItem4;
     }
 }
