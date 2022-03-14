@@ -46,8 +46,9 @@
             this.VerticalMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.VerticalMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.VerticalMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
-            this.button1 = new System.Windows.Forms.Button();
             this.VerticalMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.button1 = new System.Windows.Forms.Button();
+            this.VerticalMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.menuStrip2.SuspendLayout();
@@ -161,7 +162,8 @@
             this.VerticalMenuItem1,
             this.VerticalMenuItem2,
             this.VerticalMenuItem3,
-            this.VerticalMenuItem4});
+            this.VerticalMenuItem4,
+            this.VerticalMenuItem5});
             this.menuStrip2.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Table;
             this.menuStrip2.Location = new System.Drawing.Point(982, 0);
             this.menuStrip2.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
@@ -209,6 +211,13 @@
             this.VerticalMenuItem3.Text = "Ukryj Legendę";
             this.VerticalMenuItem3.Click += new System.EventHandler(this.VerticalMenuItem3_Click);
             // 
+            // VerticalMenuItem4
+            // 
+            this.VerticalMenuItem4.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.VerticalMenuItem4.Name = "VerticalMenuItem4";
+            this.VerticalMenuItem4.Size = new System.Drawing.Size(113, 19);
+            this.VerticalMenuItem4.Text = "Zwiększ podziałke";
+            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(1045, 395);
@@ -219,12 +228,13 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // VerticalMenuItem4
+            // VerticalMenuItem5
             // 
-            this.VerticalMenuItem4.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.VerticalMenuItem4.Name = "VerticalMenuItem4";
-            this.VerticalMenuItem4.Size = new System.Drawing.Size(113, 19);
-            this.VerticalMenuItem4.Text = "Zwiększ podziałke";
+            this.VerticalMenuItem5.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.VerticalMenuItem5.Name = "VerticalMenuItem5";
+            this.VerticalMenuItem5.Size = new System.Drawing.Size(118, 19);
+            this.VerticalMenuItem5.Text = "Zmień Typ Wykesu";
+            this.VerticalMenuItem5.Click += new System.EventHandler(this.VerticalMenuItem5_Click);
             // 
             // Wykres
             // 
@@ -266,5 +276,6 @@
         private System.Windows.Forms.ToolStripMenuItem VerticalMenuItem3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ToolStripMenuItem VerticalMenuItem4;
+        private System.Windows.Forms.ToolStripMenuItem VerticalMenuItem5;
     }
 }

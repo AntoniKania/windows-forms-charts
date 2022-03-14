@@ -122,6 +122,14 @@ namespace charts
             }
         }
 
+        private void VerticalMenuItem5_Click(object sender, EventArgs e)
+        {
+            if (s2.ChartType == SeriesChartType.Column)
+            {
+                s2.ChartType = SeriesChartType.Line;
+            }
+        }
+
         private void VerticalMenuItem4_Click(object sender, EventArgs e)
         {
             if(chartArea.AxisX.MinorGrid.Enabled == false)
