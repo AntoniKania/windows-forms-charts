@@ -1,5 +1,5 @@
-Ilość pomiarów: {0}
-Średnia arytmetyczna: {1}
-Wariancja: {2}
-Wartość maksymalna: {3}
- Wartość minimalna: {4}
+Ilość pomiarów: 30
+Średnia arytmetyczna: 11,4196
+Wariancja: 8,6174
+Wartość maksymalna: 15,5744
+Wartość minimalna: 5,0144

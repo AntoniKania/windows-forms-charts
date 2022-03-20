@@ -24,6 +24,8 @@ namespace charts
         public static double sum;
         public static double pom;
         public static int accuracy = 4;
+        public double average, maxValue, minValue, variance;
+        public int quantity;
         public Form1()
         {
             InitializeComponent();
@@ -82,8 +84,7 @@ namespace charts
         }
         public void calculateValues()
         {
-            double average, maxValue, minValue, variance;
-            int quantity = samples.Count;
+            quantity = samples.Count;
 
             for (int i = 0; i < samples.Count; i++)
             {
@@ -117,7 +118,8 @@ namespace charts
                 if (sfd.ShowDialog() == DialogResult.OK)
                 {
                     string filename = sfd.FileName;
-                    string dataToSave = "Ilość pomiarów: {0}\nŚrednia arytmetyczna: {1}\nWariancja: {2}\nWartość maksymalna: {3}\n Wartość minimalna: {4}", quantity, avrage, variance, maxValue, minValue;
+                    //string quantity = "4.54";
+                    string dataToSave = $"Ilość pomiarów: {quantity}\nŚrednia arytmetyczna: {average}\nWariancja: {variance}\nWartość maksymalna: {maxValue}\nWartość minimalna: {minValue}";
                     File.WriteAllText(filename, dataToSave);
                 }
             }
