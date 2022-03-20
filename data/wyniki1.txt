@@ -1,0 +1,5 @@
+Ilość pomiarów: {0}
+Średnia arytmetyczna: {1}
+Wariancja: {2}
+Wartość maksymalna: {3}
+ Wartość minimalna: {4}

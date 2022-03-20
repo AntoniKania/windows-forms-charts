@@ -142,6 +142,21 @@ namespace charts
             }
         }
 
+        private void zapiszJakoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog1;
+            saveFileDialog1 = new SaveFileDialog();
+            saveFileDialog1.Filter = "JPeg Image|*.jpg";
+
+            DialogResult dr = saveFileDialog1.ShowDialog();
+            if (dr == DialogResult.OK)
+            {
+                string filename = saveFileDialog1.FileName;
+                chart1.SaveImage(filename, ChartImageFormat.Jpeg);
+            }
+
+        }
+
         private void VerticalMenuItem4_Click(object sender, EventArgs e)
         {
             if(chartArea.AxisX.MinorGrid.Enabled == false)

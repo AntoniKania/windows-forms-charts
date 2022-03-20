@@ -112,12 +112,13 @@ namespace charts
         {
             using (var sfd = new SaveFileDialog())
             {
-                sfd.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
-                sfd.FilterIndex = 2;
+                sfd.Filter = "txt files|*.txt";
 
                 if (sfd.ShowDialog() == DialogResult.OK)
                 {
-                    //File.WriteAllText(sfd.FileName, textBox_ListDestination.Text);
+                    string filename = sfd.FileName;
+                    string dataToSave = "Ilość pomiarów: {0}\nŚrednia arytmetyczna: {1}\nWariancja: {2}\nWartość maksymalna: {3}\n Wartość minimalna: {4}", quantity, avrage, variance, maxValue, minValue;
+                    File.WriteAllText(filename, dataToSave);
                 }
             }
         }
