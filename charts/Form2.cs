@@ -35,8 +35,10 @@ namespace charts
         {
             legend = chart1.Legends["Legend1"];
             VerticalMenuItem3.Text = "Ukryj Legendę";
-            VerticalMenuItem1.Text = "Ukryj Serię: \nOdczyt temperatur";
-            VerticalMenuItem2.Text = "Ukryj Serię: \nRóżnica temperatur";
+            VerticalMenuItem1.Text = "Ukryj Serię:\nOdczyt temperatur";
+            VerticalMenuItem2.Text = "Ukryj Serię:\nRóżnica temperatur";
+            VerticalMenuItem5.Text = "Zmień Typ Wykesu:\nOdczyt temeratur";
+            VerticalMenuItem6.Text = "Zmień Typ Wykesu:\nRóżnica temperatur";
             s1 = chart1.Series["Odczyt Temperatur"];
             s2 = chart1.Series["Różnica Temperatur"];
             Title mainTitle = chart1.Titles["Wykres Pomiarów"];
@@ -97,13 +99,6 @@ namespace charts
             VerticalMenuItem3_Click(sender, e);
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            chartArea.AxisX.MinorGrid.Enabled = true;
-            chartArea.AxisY.MinorGrid.Enabled = true;
-            //chartArea.AxisX.Crossing += 2;
-          
-        }
 
         private void VerticalMenuItem3_Click(object sender, EventArgs e)
         {
@@ -124,9 +119,26 @@ namespace charts
 
         private void VerticalMenuItem5_Click(object sender, EventArgs e)
         {
+            if (s1.ChartType == SeriesChartType.Column)
+            {
+                s1.ChartType = SeriesChartType.Line;
+            }
+            else if (s1.ChartType == SeriesChartType.Line)
+            {
+                s1.ChartType = SeriesChartType.Column;
+            }
+        }
+
+
+        private void VerticalMenuItem6_Click(object sender, EventArgs e)
+        {
             if (s2.ChartType == SeriesChartType.Column)
             {
                 s2.ChartType = SeriesChartType.Line;
+            }
+            else if (s2.ChartType == SeriesChartType.Line)
+            {
+                s2.ChartType = SeriesChartType.Column;
             }
         }
 
