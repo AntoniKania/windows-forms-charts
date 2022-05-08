@@ -36,7 +36,8 @@ namespace charts
             Stream myStream = null;
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
             openFileDialog1.InitialDirectory = "/.";
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            openFileDialog1.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+            if (openFileDialog1.ShowDialog() == DialogResult.OK && openFileDialog1.FileName.Contains(".txt"))
             {
                 try
                 {
@@ -46,7 +47,8 @@ namespace charts
                         {
                             button1.AccessibleRole = AccessibleRole.None;
                             button3.AccessibleRole = AccessibleRole.Default;
-                            label1.Text = "Wczytano pliki!";
+                            label1.Text = "Wczytano pliki " + openFileDialog1.FileName.Substring(openFileDialog1.FileName.LastIndexOf(@"\") + 1);
+                            label1.ForeColor = Color.Green;
                             button2.Enabled = true;
                             string file = File.ReadAllText(openFileDialog1.FileName);
 
@@ -64,8 +66,8 @@ namespace charts
                                 if(double.TryParse(readData[i], out number))
                                     samples.Add(number);
                             }
-
                             calculateValues();
+                            myStream.Close();
                         }
                     }
                 }
@@ -73,6 +75,10 @@ namespace charts
                 {
                     MessageBox.Show("Error: Could not read file from disk. Original error: " + ex.Message);
                 }
+            }
+            else
+            {
+                MessageBox.Show("Wybrano zły typ pliku!");
             }
 
         }

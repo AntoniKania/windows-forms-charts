@@ -48,9 +48,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
-            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox8.SuspendLayout();
@@ -74,7 +73,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(579, 49);
+            this.label1.Location = new System.Drawing.Point(571, 58);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(112, 13);
             this.label1.TabIndex = 1;
@@ -112,41 +111,41 @@
             // 
             // textBoxMinValues
             // 
-            this.textBoxMinValues.Enabled = false;
             this.textBoxMinValues.Location = new System.Drawing.Point(588, 54);
             this.textBoxMinValues.Name = "textBoxMinValues";
+            this.textBoxMinValues.ReadOnly = true;
             this.textBoxMinValues.Size = new System.Drawing.Size(100, 20);
             this.textBoxMinValues.TabIndex = 9;
             // 
             // textBoxMaxValue
             // 
-            this.textBoxMaxValue.Enabled = false;
             this.textBoxMaxValue.Location = new System.Drawing.Point(588, 29);
             this.textBoxMaxValue.Name = "textBoxMaxValue";
+            this.textBoxMaxValue.ReadOnly = true;
             this.textBoxMaxValue.Size = new System.Drawing.Size(100, 20);
             this.textBoxMaxValue.TabIndex = 8;
             // 
             // textBoxvVariance
             // 
-            this.textBoxvVariance.Enabled = false;
             this.textBoxvVariance.Location = new System.Drawing.Point(168, 79);
             this.textBoxvVariance.Name = "textBoxvVariance";
+            this.textBoxvVariance.ReadOnly = true;
             this.textBoxvVariance.Size = new System.Drawing.Size(100, 20);
             this.textBoxvVariance.TabIndex = 7;
             // 
             // textBoxQuantity
             // 
-            this.textBoxQuantity.Enabled = false;
             this.textBoxQuantity.Location = new System.Drawing.Point(168, 29);
             this.textBoxQuantity.Name = "textBoxQuantity";
+            this.textBoxQuantity.ReadOnly = true;
             this.textBoxQuantity.Size = new System.Drawing.Size(100, 20);
             this.textBoxQuantity.TabIndex = 6;
             // 
             // textBoxAverage
             // 
-            this.textBoxAverage.Enabled = false;
             this.textBoxAverage.Location = new System.Drawing.Point(168, 54);
             this.textBoxAverage.Name = "textBoxAverage";
+            this.textBoxAverage.ReadOnly = true;
             this.textBoxAverage.Size = new System.Drawing.Size(100, 20);
             this.textBoxAverage.TabIndex = 5;
             // 
@@ -227,7 +226,6 @@
             // 
             // groupBox8
             // 
-            this.groupBox8.Controls.Add(this.label10);
             this.groupBox8.Controls.Add(this.button3);
             this.groupBox8.Controls.Add(this.label9);
             this.groupBox8.Location = new System.Drawing.Point(13, 328);
@@ -237,6 +235,17 @@
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Zapis Wyników";
             // 
+            // button3
+            // 
+            this.button3.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.button3.Location = new System.Drawing.Point(391, 39);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(120, 23);
+            this.button3.TabIndex = 1;
+            this.button3.Text = "Zapisz jako...";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -245,26 +254,6 @@
             this.label9.Size = new System.Drawing.Size(89, 13);
             this.label9.TabIndex = 0;
             this.label9.Text = "Eksportuj Wyniki:";
-            // 
-            // button3
-            // 
-            this.button3.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.button3.Location = new System.Drawing.Point(372, 44);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(106, 23);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "Zapisz jako...";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(39, 61);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(41, 13);
-            this.label10.TabIndex = 2;
-            this.label10.Text = "label10";
             // 
             // Form1
             // 
@@ -313,7 +302,6 @@
         private System.Windows.Forms.GroupBox groupBox8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Label label10;
     }
 }
 

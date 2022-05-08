@@ -41,9 +41,22 @@ namespace charts
             VerticalMenuItem6.Text = "Zmień Typ Wykesu:\nRóżnica temperatur";
             s1 = chart1.Series["Odczyt Temperatur"];
             s2 = chart1.Series["Różnica Temperatur"];
+            VerticalMenuItem7.Text = "Zmień Kolor Serii\nOdczyt temperatu";
+            toolStripMenuItem2.Text = "Zmień Kolor Serii\nRóżnica Temperatur";
+            VerticalMenuItem7.Size = new System.Drawing.Size(183, 39);
             Title mainTitle = chart1.Titles["Wykres Pomiarów"];
             mainTitle.Text = title;
             chartArea = chart1.ChartAreas["ChartArea1"];
+            S2BlueButton_Click(sender, e);
+            S1RedButton_Click(sender, e);
+
+            /*
+            PictureBox display = new PictureBox();
+            display.Width = ClientRectangle.Width;
+            display.Height = ClientRectangle.Height;
+            this.Controls.Add(display);
+            //display.Image = bmp;
+            */
 
             for (int x = 0; x < samples.Count; x++)
                 s1.Points.AddXY(x + 1, samples[x]);
@@ -51,7 +64,15 @@ namespace charts
                 s2.Points.AddXY(x2, samples[x2]-samples[x2-1]);
 
         }
-
+ 
+        private void Form2_Resize(object sender, System.EventArgs e)
+        {
+            //Control control = (Control)sender;
+            if (this.Height < 553)
+                menuStrip2.Visible = false;
+            else
+                menuStrip2.Visible = true;
+        }
 
         private void VerticalMenuItem1_Click(object sender, EventArgs e)
         {
@@ -155,6 +176,92 @@ namespace charts
                 chart1.SaveImage(filename, ChartImageFormat.Jpeg);
             }
 
+        }
+
+        private void S1RedButton_Click(object sender, EventArgs e)
+        {
+            s1.Color = Color.Red;
+            S1RedButton.Checked = true;
+            S1OrangeButton.Checked = false;
+            S1BlueButton.Checked = false;
+            S1RedVertical.Checked = true;
+            S1BlueVertical.Checked = false;
+            S1OrangeVertical.Checked = false;
+        }
+
+        private void S1BlueButton_Click(object sender, EventArgs e)
+        {
+            s1.Color = Color.Blue;
+            S1RedButton.Checked = false;
+            S1OrangeButton.Checked = false;
+            S1BlueButton.Checked = true;
+            S1RedVertical.Checked = false;
+            S1BlueVertical.Checked = true;
+            S1OrangeVertical.Checked = false;
+        }
+
+        private void S1OrangeButton_Click(object sender, EventArgs e)
+        {
+            s1.Color = Color.Orange;
+            S1RedButton.Checked = false;
+            S1OrangeButton.Checked = true;
+            S1BlueButton.Checked = false;
+            S1RedVertical.Checked = false;
+            S1BlueVertical.Checked = false;
+            S1OrangeVertical.Checked = true;
+        }
+        private void S2RedButton_Click(object sender, EventArgs e)
+        {
+            s2.Color = Color.Red;
+            S2RedButton.Checked = true;
+            S2OrangeButton.Checked = false;
+            S2BlueButton.Checked = false;
+        }
+
+        private void S2BlueButton_Click(object sender, EventArgs e)
+        {
+            s2.Color = Color.Blue;
+            S2RedButton.Checked = false;
+            S2OrangeButton.Checked = false;
+            S2BlueButton.Checked = true;
+        }
+
+        private void S2OrangeButton_Click(object sender, EventArgs e)
+        {
+            s2.Color = Color.Orange;
+            S2RedButton.Checked = false;
+            S2OrangeButton.Checked = true;
+            S2BlueButton.Checked = false;
+        }
+
+        private void S1RedVertical_Click(object sender, EventArgs e)
+        {
+            S1RedButton_Click(sender, e);
+        }
+
+        private void S1BlueVertical_Click(object sender, EventArgs e)
+        {
+            S1BlueButton_Click(sender, e);
+        }
+
+        private void S1OrangeVertical_Click(object sender, EventArgs e)
+        {
+            S1OrangeButton_Click(sender, e);
+        }
+
+        private void S2RedVertical_Click(object sender, EventArgs e)
+        {
+            S2RedButton_Click(sender, e);
+        }
+
+        private void S2BlueVertical_Click(object sender, EventArgs e)
+        {
+            S2BlueButton_Click(sender, e);
+        }
+
+        private void S2OrangeVertical_Click(object sender, EventArgs e)
+        {
+            S2OrangeButton_Click(sender, e);
         }
 
         private void VerticalMenuItem4_Click(object sender, EventArgs e)
