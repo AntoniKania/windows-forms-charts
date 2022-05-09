@@ -37,8 +37,8 @@ namespace charts
             VerticalMenuItem3.Text = "Ukryj Legendę";
             VerticalMenuItem1.Text = "Ukryj Serię:\nOdczyt temperatur";
             VerticalMenuItem2.Text = "Ukryj Serię:\nRóżnica temperatur";
-            VerticalMenuItem5.Text = "Zmień Typ Wykesu:\nOdczyt temeratur";
-            VerticalMenuItem6.Text = "Zmień Typ Wykesu:\nRóżnica temperatur";
+            ChangeChartTypeS1.Text = "Zmień Typ Wykesu:\nOdczyt temeratur";
+            ChangeChartTypeS2.Text = "Zmień Typ Wykesu:\nRóżnica temperatur";
             s1 = chart1.Series["Odczyt Temperatur"];
             s2 = chart1.Series["Różnica Temperatur"];
             VerticalMenuItem7.Text = "Zmień Kolor Serii\nOdczyt temperatu";
@@ -49,6 +49,7 @@ namespace charts
             chartArea = chart1.ChartAreas["ChartArea1"];
             S2BlueButton_Click(sender, e);
             S1RedButton_Click(sender, e);
+            zapiszJakoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((Keys.Control | Keys.S)));
 
             /*
             PictureBox display = new PictureBox();
@@ -138,7 +139,7 @@ namespace charts
             }
         }
 
-        private void VerticalMenuItem5_Click(object sender, EventArgs e)
+        private void ChangeChartTypeS1_Click(object sender, EventArgs e)
         {
             if (s1.ChartType == SeriesChartType.Column)
             {
@@ -151,7 +152,7 @@ namespace charts
         }
 
 
-        private void VerticalMenuItem6_Click(object sender, EventArgs e)
+        private void ChangeChartTypeS2_Click(object sender, EventArgs e)
         {
             if (s2.ChartType == SeriesChartType.Column)
             {
@@ -264,17 +265,34 @@ namespace charts
             S2OrangeButton_Click(sender, e);
         }
 
-        private void VerticalMenuItem4_Click(object sender, EventArgs e)
+        private void ScaleButton_Click(object sender, EventArgs e)
+        {
+            ScaleButtonVertical_Click(sender, e);
+        }
+
+        private void ChangeChartTypeS1Horizontal_Click(object sender, EventArgs e)
+        {
+            ChangeChartTypeS1_Click(sender, e);
+        }
+
+        private void ChangeChartTypeS2Horizontal_Click(object sender, EventArgs e)
+        {
+            ChangeChartTypeS2_Click(sender, e);
+        }
+
+        private void ScaleButtonVertical_Click(object sender, EventArgs e)
         {
             if(chartArea.AxisX.MinorGrid.Enabled == false)
             {
                 chartArea.AxisX.MinorGrid.Enabled = true;
                 chartArea.AxisY.MinorGrid.Enabled = true;
+                ScaleButton.Checked = true;
             }
             else
             {
                 chartArea.AxisX.MinorGrid.Enabled = false;
                 chartArea.AxisY.MinorGrid.Enabled = false;
+                ScaleButton.Checked = false;
             }
         }
 

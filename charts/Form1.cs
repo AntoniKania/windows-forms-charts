@@ -29,6 +29,7 @@ namespace charts
         public Form1()
         {
             InitializeComponent();
+            zapiszJakoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((Keys.Control | Keys.S)));
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -56,14 +57,14 @@ namespace charts
                             string[] readData = file.Split(';').ToArray();
                             double number;
 
-                            
+
 
                             if (!double.TryParse(readData[0], out number))
                                 title = readData[0];
-                            
-                            for(int i = 0; i < readData.Length - 1; i++)
+
+                            for (int i = 0; i < readData.Length - 1; i++)
                             {
-                                if(double.TryParse(readData[i], out number))
+                                if (double.TryParse(readData[i], out number))
                                     samples.Add(number);
                             }
                             calculateValues();
@@ -73,14 +74,40 @@ namespace charts
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error: Could not read file from disk. Original error: " + ex.Message);
+
+                    MessageBox.Show("Błąd: Nie można było wczytać pliku.\nOriginal error: " + ex.Message, "Błąd!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+            else if (openFileDialog1.FileName == "")
+            {
+                MessageBox.Show("Nie wybrano pliku!", "Uwaga!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            } 
             else
             {
-                MessageBox.Show("Wybrano zły typ pliku!");
+                MessageBox.Show("Błąd: Wybrano zły typ pliku!", "Błąd!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void zapiszJakoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (var sfd = new SaveFileDialog())
+            {
+                sfd.Filter = "txt files|*.txt";
+
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    string filename = sfd.FileName;
+                    //string quantity = "4.54";
+                    string dataToSave = $"Ilość pomiarów: {quantity}\nŚrednia arytmetyczna: {average}\nWariancja: {variance}\nWartość maksymalna: {maxValue}\nWartość minimalna: {minValue}";
+                    File.WriteAllText(filename, dataToSave);
+                }
+            }
         }
 
         private void button2_MouseClick(object sender, MouseEventArgs e)
@@ -117,18 +144,7 @@ namespace charts
 
         private void button3_Click(object sender, EventArgs e)
         {
-            using (var sfd = new SaveFileDialog())
-            {
-                sfd.Filter = "txt files|*.txt";
-
-                if (sfd.ShowDialog() == DialogResult.OK)
-                {
-                    string filename = sfd.FileName;
-                    //string quantity = "4.54";
-                    string dataToSave = $"Ilość pomiarów: {quantity}\nŚrednia arytmetyczna: {average}\nWariancja: {variance}\nWartość maksymalna: {maxValue}\nWartość minimalna: {minValue}";
-                    File.WriteAllText(filename, dataToSave);
-                }
-            }
+            zapiszJakoToolStripMenuItem_Click(sender, e);
         }
     }
 }
