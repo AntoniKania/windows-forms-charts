@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.button1 = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
@@ -54,15 +55,18 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.plikToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.zapiszJakoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(586, 38);
+            this.button1.Location = new System.Drawing.Point(505, 38);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(120, 23);
             this.button1.TabIndex = 0;
@@ -78,7 +82,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(571, 58);
+            this.label1.Location = new System.Drawing.Point(490, 58);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(112, 13);
             this.label1.TabIndex = 1;
@@ -87,7 +91,7 @@
             // button2
             // 
             this.button2.Enabled = false;
-            this.button2.Location = new System.Drawing.Point(574, 23);
+            this.button2.Location = new System.Drawing.Point(493, 23);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(120, 23);
             this.button2.TabIndex = 2;
@@ -116,7 +120,7 @@
             // 
             // textBoxMinValues
             // 
-            this.textBoxMinValues.Location = new System.Drawing.Point(588, 54);
+            this.textBoxMinValues.Location = new System.Drawing.Point(573, 57);
             this.textBoxMinValues.Name = "textBoxMinValues";
             this.textBoxMinValues.ReadOnly = true;
             this.textBoxMinValues.Size = new System.Drawing.Size(100, 20);
@@ -124,7 +128,7 @@
             // 
             // textBoxMaxValue
             // 
-            this.textBoxMaxValue.Location = new System.Drawing.Point(588, 29);
+            this.textBoxMaxValue.Location = new System.Drawing.Point(573, 32);
             this.textBoxMaxValue.Name = "textBoxMaxValue";
             this.textBoxMaxValue.ReadOnly = true;
             this.textBoxMaxValue.Size = new System.Drawing.Size(100, 20);
@@ -157,7 +161,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(473, 54);
+            this.label7.Location = new System.Drawing.Point(458, 57);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(97, 13);
             this.label7.TabIndex = 4;
@@ -166,7 +170,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(473, 32);
+            this.label6.Location = new System.Drawing.Point(458, 35);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(109, 13);
             this.label6.TabIndex = 3;
@@ -223,7 +227,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(23, 43);
+            this.label2.Location = new System.Drawing.Point(26, 43);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(169, 13);
             this.label2.TabIndex = 6;
@@ -243,7 +247,8 @@
             // button3
             // 
             this.button3.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.button3.Location = new System.Drawing.Point(391, 39);
+            this.button3.Enabled = false;
+            this.button3.Location = new System.Drawing.Point(492, 39);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(120, 23);
             this.button3.TabIndex = 1;
@@ -282,15 +287,32 @@
             // zapiszJakoToolStripMenuItem
             // 
             this.zapiszJakoToolStripMenuItem.Name = "zapiszJakoToolStripMenuItem";
-            this.zapiszJakoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.zapiszJakoToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.zapiszJakoToolStripMenuItem.Text = "Zapisz jako...";
             this.zapiszJakoToolStripMenuItem.Click += new System.EventHandler(this.zapiszJakoToolStripMenuItem_Click);
+            // 
+            // imageList1
+            // 
+            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::charts.Properties.Resources.Temperature_icon;
+            this.pictureBox1.Location = new System.Drawing.Point(707, 16);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(65, 65);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.TabStop = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox8);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button1);
@@ -310,6 +332,7 @@
             this.groupBox8.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -342,6 +365,8 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem plikToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem zapiszJakoToolStripMenuItem;
+        private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

@@ -51,6 +51,7 @@ namespace charts
                             label1.Text = "Wczytano pliki " + openFileDialog1.FileName.Substring(openFileDialog1.FileName.LastIndexOf(@"\") + 1);
                             label1.ForeColor = Color.Green;
                             button2.Enabled = true;
+                            button3.Enabled = true;
                             string file = File.ReadAllText(openFileDialog1.FileName);
 
 
