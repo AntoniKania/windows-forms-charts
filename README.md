@@ -1,8 +1,11 @@
 # windows-forms-charts
 Second semestral project from my studies. Main window layout:
+
 ![Zrzut ekranu 2022-05-23 213903](https://user-images.githubusercontent.com/87483058/169895376-a68e4492-5b21-4f9d-9875-01e9cfaab351.png)
 
 # 1. Opening file
+Selecting file window:
+
 ![Zrzut ekranu 2022-05-23 213822](https://user-images.githubusercontent.com/87483058/169895532-d61f08ef-12d8-4faf-8d29-58c3529e5dfb.png)
 
 ```c#
@@ -28,20 +31,15 @@ private void button1_Click(object sender, EventArgs e)
                             button3.Enabled = true;
                             string file = File.ReadAllText(openFileDialog1.FileName);
 
-
                             string[] readData = file.Split(';').ToArray();
                             double number;
-
-
 
                             if (!double.TryParse(readData[0], out number))
                                 title = readData[0];
 
                             for (int i = 0; i < readData.Length - 1; i++)
-                            {
                                 if (double.TryParse(readData[i], out number))
                                     samples.Add(number);
-                            }
                             calculateValues();
                             myStream.Close();
                         }
