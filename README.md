@@ -131,11 +131,10 @@ private void zapiszJakoToolStripMenuItem_Click(object sender, EventArgs e)
                 if (sfd.ShowDialog() == DialogResult.OK)
                 {
                     string filename = sfd.FileName;
-                    //string quantity = "4.54";
                     string dataToSave = $"Ilość pomiarów: {quantity}\nŚrednia arytmetyczna: {average}\nWariancja: {variance}\nWartość maksymalna: {maxValue}\nWartość minimalna: {minValue}";
                     File.WriteAllText(filename, dataToSave);
                 }
             }
         }
 ```
-Code is written in ToolStripMenuItem method due to shortcut **Ctrl + S** could be used.
+Code is written in ToolStripMenuItem method due to shortcut **Ctrl + S** could be used. Saving is used by using **SaveFileDialog()** which open up window where user can determine the path where file should be saved.
