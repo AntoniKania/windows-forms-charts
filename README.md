@@ -87,6 +87,7 @@ public void calculateValues()
             textBoxMinValues.Text = minValue.ToString();
         }
 ```
+Property **ReadOnly** is set to **true** for all of the textboxes. This means values can't be modified by user.
 # 3. Chart
 Declaring variables 
 ```c#
@@ -119,3 +120,22 @@ private void ChangeChartTypeS1_Click(object sender, EventArgs e)
             }
         }
 ```
+# 4. Saving results to file
+```c#
+private void zapiszJakoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (var sfd = new SaveFileDialog())
+            {
+                sfd.Filter = "txt files|*.txt";
+
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    string filename = sfd.FileName;
+                    //string quantity = "4.54";
+                    string dataToSave = $"Ilość pomiarów: {quantity}\nŚrednia arytmetyczna: {average}\nWariancja: {variance}\nWartość maksymalna: {maxValue}\nWartość minimalna: {minValue}";
+                    File.WriteAllText(filename, dataToSave);
+                }
+            }
+        }
+```
+Code is written in ToolStripMenuItem method due to shortcut **Ctrl + S** could be used.
