@@ -1,4 +1,5 @@
 # windows-forms-charts
+Second semestral project from my studies. Main window layout:
 ![Zrzut ekranu 2022-05-23 213903](https://user-images.githubusercontent.com/87483058/169895376-a68e4492-5b21-4f9d-9875-01e9cfaab351.png)
 
 # 1. Opening file
