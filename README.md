@@ -1,6 +1,7 @@
 # windows-forms-charts
 # 1. Opening file
-'''c#
+<!---
+```c#
 private void button1_Click(object sender, EventArgs e)
         {
             Stream myStream = null;
@@ -57,5 +58,7 @@ private void button1_Click(object sender, EventArgs e)
                 MessageBox.Show("Błąd: Wybrano zły typ pliku!", "Błąd!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        '''
-        test
+        ```
+--->
+
+
