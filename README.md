@@ -1,4 +1,5 @@
 # windows-forms-charts
+
 # 1. Opening file
 
 ```c#
@@ -89,6 +90,14 @@ public void calculateValues()
 ```
 Property **ReadOnly** is set to **true** for all of the textboxes. This means values can't be modified by user.
 # 3. Chart
+Creating new object called wykres (class **Wykres** inherits from class **Form**). Object **wykres** is new window in which chart is shown.
+```c#
+private void button2_MouseClick(object sender, MouseEventArgs e)
+        {
+            Wykres wykres = new Wykres(samples, title);
+            wykres.Show(); //opening window
+        }
+```
 Declaring variables 
 ```c#
 public static Legend legend;
@@ -107,6 +116,7 @@ for(int x2 = 1; x2 < samples.Count; x2++)
 this part of code is executed in Wyres_Load method.
 
 Changing type of chart in Series s1
+
 ```c#
 private void ChangeChartTypeS1_Click(object sender, EventArgs e)
         {
