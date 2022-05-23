@@ -1,6 +1,8 @@
 # windows-forms-charts
+![Zrzut ekranu 2022-05-23 213903](https://user-images.githubusercontent.com/87483058/169895376-a68e4492-5b21-4f9d-9875-01e9cfaab351.png)
 
 # 1. Opening file
+![Zrzut ekranu 2022-05-23 213822](https://user-images.githubusercontent.com/87483058/169895532-d61f08ef-12d8-4faf-8d29-58c3529e5dfb.png)
 
 ```c#
 private void button1_Click(object sender, EventArgs e)
@@ -90,6 +92,7 @@ public void calculateValues()
 ```
 Property **ReadOnly** is set to **true** for all of the textboxes. This means values can't be modified by user.
 # 3. Chart
+![Zrzut ekranu 2022-05-23 213958](https://user-images.githubusercontent.com/87483058/169895679-6845b828-864a-4997-bbdd-09680ac74d07.png)
 Creating new object called wykres (class **Wykres** inherits from class **Form**). Object **wykres** is new window in which chart is shown.
 ```c#
 private void button2_MouseClick(object sender, MouseEventArgs e)
@@ -147,4 +150,4 @@ private void zapiszJakoToolStripMenuItem_Click(object sender, EventArgs e)
             }
         }
 ```
-Code is written in ToolStripMenuItem method due to shortcut **Ctrl + S** could be used. Saving is used by using **SaveFileDialog()** which open up window where user can determine the path where file should be saved.
+Code is written in ToolStripMenuItem method due to shortcut **Ctrl + S** could be used. Saving is manage by using **SaveFileDialog** class. **ShowDialog()** method opens up new window in which user can determine the path where file will be saved.
