@@ -58,6 +58,64 @@ private void button1_Click(object sender, EventArgs e)
                 MessageBox.Show("Błąd: Wybrano zły typ pliku!", "Błąd!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        ```
+```
+# 2. Calculating and displaying values
+```c#
+public void calculateValues()
+        {
+            quantity = samples.Count;
 
+            for (int i = 0; i < samples.Count; i++)
+            {
+                sum += samples[i];
+            }
+            average = Math.Round(sum / samples.Count, accuracy);
+            samples.Sort();
+            maxValue = Math.Round(samples[samples.Count - 1], accuracy);
+            minValue = Math.Round(samples[0], accuracy);
 
+            for(int j = 0; j < samples.Count; j++)
+            {
+                pom += Math.Pow(samples[j] - average, 2);
+            }
+            variance = Math.Round(pom / samples.Count, accuracy);
+
+            textBoxQuantity.Text = quantity.ToString();
+            textBoxAverage.Text = average.ToString();
+            textBoxvVariance.Text = variance.ToString();
+            textBoxMaxValue.Text = maxValue.ToString();
+            textBoxMinValues.Text = minValue.ToString();
+        }
+```
+# 3. Chart
+Declaring variables 
+```c#
+public static Legend legend;
+public static Series s1, s2;
+List<double> samples = new List<double>();
+public static string title;
+public static ChartArea chartArea;
+```
+Drawing series
+```c#
+for (int x = 0; x < samples.Count; x++)
+        s1.Points.AddXY(x + 1, samples[x]);
+for(int x2 = 1; x2 < samples.Count; x2++)
+        s2.Points.AddXY(x2, samples[x2]-samples[x2-1]);
+```
+this part of code is executed in Wyres_Load method.
+
+Changing type of chart in Series s1
+```c#
+private void ChangeChartTypeS1_Click(object sender, EventArgs e)
+        {
+            if (s1.ChartType == SeriesChartType.Column)
+            {
+                s1.ChartType = SeriesChartType.Line;
+            }
+            else if (s1.ChartType == SeriesChartType.Line)
+            {
+                s1.ChartType = SeriesChartType.Column;
+            }
+        }
+```
