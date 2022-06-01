@@ -8,7 +8,7 @@ Selecting file window:
 
 ![Zrzut ekranu 2022-05-23 213822](https://user-images.githubusercontent.com/87483058/169895532-d61f08ef-12d8-4faf-8d29-58c3529e5dfb.png)
 
-If file was not selected or file is not .txt appropriate messagebox will be displayed. Window thats opens up automaticly shows only .txt files but user can manually change the filter to all files. This works like that because .Filter property is set to `"txt files (*.txt)|*.txt|All files (*.*)|*.*"`
+If file was not selected or file is not .txt appropriate messagebox will be displayed. Window thats opens up automaticly shows only .txt files but user can manually change the filter to all files. This works like that because .Filter property is set to `"txt files (*.txt)|*.txt|All files (*.*)|*.*"`.
 ```c#
 private void button1_Click(object sender, EventArgs e)
         {
@@ -135,6 +135,17 @@ private void ChangeChartTypeS1_Click(object sender, EventArgs e)
             {
                 s1.ChartType = SeriesChartType.Column;
             }
+        }
+```
+Hiding side menu if the window get too small.
+![image](https://user-images.githubusercontent.com/87483058/171502723-1b222ba1-de61-42ab-bbfb-b7162b10f07f.png)
+```c#
+private void Form2_Resize(object sender, System.EventArgs e)
+        {
+            if (this.Height < 553)
+                menuStrip2.Visible = false;
+            else
+                menuStrip2.Visible = true;
         }
 ```
 # 4. Saving results to file
