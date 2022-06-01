@@ -1,5 +1,5 @@
 # windows-forms-charts
-Second semestral project from my studies. Main window layout:
+Main window layout:
 
 ![Zrzut ekranu 2022-05-23 213903](https://user-images.githubusercontent.com/87483058/169895376-a68e4492-5b21-4f9d-9875-01e9cfaab351.png)
 
@@ -97,7 +97,7 @@ Property **ReadOnly** is set to **true** for all of the textboxes. This means va
 
 # 3. Chart
 ![Zrzut ekranu 2022-05-23 213958](https://user-images.githubusercontent.com/87483058/169895679-6845b828-864a-4997-bbdd-09680ac74d07.png)
-Creating new object called wykres (class **Wykres** inherits from class **Form**). Object **wykres** is new window in which chart is shown.
+Creating new object called wykres (class **Wykres** inherits from class **Form**) this means that new window is created. Object **wykres** is new window in which chart is shown.
 ```c#
 private void button2_MouseClick(object sender, MouseEventArgs e)
         {
@@ -113,16 +113,16 @@ List<double> samples = new List<double>();
 public static string title;
 public static ChartArea chartArea;
 ```
-Drawing series
+Drawing series. Simple for loop that iterates through each sample in array and creates series in result. That code is executed in Wyres_Load method.
 ```c#
 for (int x = 0; x < samples.Count; x++)
         s1.Points.AddXY(x + 1, samples[x]);
 for(int x2 = 1; x2 < samples.Count; x2++)
         s2.Points.AddXY(x2, samples[x2]-samples[x2-1]);
 ```
-this part of code is executed in Wyres_Load method.
 
-Changing type of chart in Series s1
+
+Changing type of chart in Series s1. The user can choose between Columne type and Line type.
 
 ```c#
 private void ChangeChartTypeS1_Click(object sender, EventArgs e)
@@ -137,7 +137,7 @@ private void ChangeChartTypeS1_Click(object sender, EventArgs e)
             }
         }
 ```
-Hiding side menu if the window get too small.
+Hiding side menu if the window get too small. Menu in right side automatically hides if height of the window is smaller than 553px. All of the options can still be access via `MenuStrip` located on top.
 ![image](https://user-images.githubusercontent.com/87483058/171502723-1b222ba1-de61-42ab-bbfb-b7162b10f07f.png)
 ```c#
 private void Form2_Resize(object sender, System.EventArgs e)
@@ -148,7 +148,7 @@ private void Form2_Resize(object sender, System.EventArgs e)
                 menuStrip2.Visible = true;
         }
 ```
-# 4. Saving results to file
+# 4. Saving results to the file
 ```c#
 private void zapiszJakoToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -165,4 +165,4 @@ private void zapiszJakoToolStripMenuItem_Click(object sender, EventArgs e)
             }
         }
 ```
-Code is written in ToolStripMenuItem method due to shortcut **Ctrl + S** could be used. Saving is manage by using **SaveFileDialog** class. **ShowDialog()** method opens up new window in which user can determine the path where file will be saved.
+Code is written in ToolStripMenuItem method due to shortcut **Ctrl + S** could be used. Saving is manage by using **SaveFileDialog** class. **ShowDialog()** method opens up new window in which user can choose the path where file will be saved.
