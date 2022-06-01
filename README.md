@@ -139,6 +139,7 @@ private void ChangeChartTypeS1_Click(object sender, EventArgs e)
 ```
 Hiding side menu if the window get too small. Menu in right side automatically hides if height of the window is smaller than 553px. All of the options can still be access via `MenuStrip` located on top.
 ![image](https://user-images.githubusercontent.com/87483058/171502723-1b222ba1-de61-42ab-bbfb-b7162b10f07f.png)
+
 ```c#
 private void Form2_Resize(object sender, System.EventArgs e)
         {
