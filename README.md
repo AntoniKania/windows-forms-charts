@@ -62,6 +62,7 @@ private void button1_Click(object sender, EventArgs e)
         }
 ```
 # 2. Calculating and displaying values
+Part of code responsible for calculating each value and put it into right textbox.
 ```c#
 public void calculateValues()
         {
@@ -90,6 +91,9 @@ public void calculateValues()
         }
 ```
 Property **ReadOnly** is set to **true** for all of the textboxes. This means values can't be modified by user.
+
+![image](https://user-images.githubusercontent.com/87483058/171498624-78853d12-85a5-47f9-b439-2455a1ddf3a5.png)
+
 # 3. Chart
 ![Zrzut ekranu 2022-05-23 213958](https://user-images.githubusercontent.com/87483058/169895679-6845b828-864a-4997-bbdd-09680ac74d07.png)
 Creating new object called wykres (class **Wykres** inherits from class **Form**). Object **wykres** is new window in which chart is shown.
