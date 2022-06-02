@@ -101,7 +101,8 @@ Property **ReadOnly** is set to **true** for all of the textboxes. That means va
 # 3. Chart
 
 Chart opens up in new window after **"Wyświetl wykres"** button was clicked.
-***Chart window appearance:***
+
+<sub>***Chart window appearance:***</sub>
 
 ![Zrzut ekranu 2022-05-23 213958](https://user-images.githubusercontent.com/87483058/169895679-6845b828-864a-4997-bbdd-09680ac74d07.png)
 
