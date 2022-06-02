@@ -8,7 +8,7 @@ Selecting file window:
 
 ![Zrzut ekranu 2022-05-23 213822](https://user-images.githubusercontent.com/87483058/169895532-d61f08ef-12d8-4faf-8d29-58c3529e5dfb.png)
 
-If file was not selected or file was not .txt type, appropriate messagebox would be displayed. Window thats opens up automaticly shows only .txt files but user can manually change the filter to all types of files. This works like that because **.Filter** property is set to `"txt files (*.txt)|*.txt|All files (*.*)|*.*"`.
+If file was not selected or file was not `.txt` type, appropriate messagebox would be displayed. Window thats opens up automaticly shows only .txt files but user can manually change the filter to all types of files. This works like that because **.Filter** property is set to `"txt files (*.txt)|*.txt|All files (*.*)|*.*"`.
 ```c#
 private void button1_Click(object sender, EventArgs e)
         {
