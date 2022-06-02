@@ -164,7 +164,7 @@ private void Form2_Resize(object sender, System.EventArgs e)
 
 ![image](https://user-images.githubusercontent.com/87483058/171726154-31eadc46-f381-473f-a5e0-1b71cc0daf44.png)
 
-SaveFileDialog appearance:
+***SaveFileDialog appearance:***
 
 ![image](https://user-images.githubusercontent.com/87483058/171726061-9c695374-5846-45de-b67b-576f1af21196.png)
 
