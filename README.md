@@ -168,7 +168,7 @@ private void Form2_Resize(object sender, System.EventArgs e)
 
 ![image](https://user-images.githubusercontent.com/87483058/171726061-9c695374-5846-45de-b67b-576f1af21196.png)
 
-If chart window is in focus and `ctrl+S` shortcut will be executed or `Save as...` button will be clicked, new SaveFileDialog window shows up in which `.jpeg` file containing chart can be saved. Part of code responsible for that:
+If chart window is in focus and `Ctrl+S` shortcut will be executed or `Save as...` button will be clicked, new SaveFileDialog window shows up in which `.jpeg` file containing chart can be saved. Part of code responsible for that:
 ```c#
 private void zapiszJakoToolStripMenuItem_Click(object sender, EventArgs e)
         {
