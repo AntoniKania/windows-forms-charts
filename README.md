@@ -62,7 +62,7 @@ private void button1_Click(object sender, EventArgs e)
             }
         }
 ```
-MessageBox shown if .`jpg` file was selected instead of `.txt`:
+MessageBox shown if `.jpg` file was selected instead of `.txt`:
 
 ![image](https://user-images.githubusercontent.com/87483058/171732678-baf9ec86-869a-4cec-afe8-314c81d2c63e.png)
 
