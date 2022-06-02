@@ -1,5 +1,5 @@
-# windows-forms-charts
-Main window layout:
+# **windows-forms-charts**
+***Main window layout:***
 
 ![Zrzut ekranu 2022-05-23 213903](https://user-images.githubusercontent.com/87483058/169895376-a68e4492-5b21-4f9d-9875-01e9cfaab351.png)
 
@@ -8,7 +8,7 @@ Selecting file window:
 
 ![Zrzut ekranu 2022-05-23 213822](https://user-images.githubusercontent.com/87483058/169895532-d61f08ef-12d8-4faf-8d29-58c3529e5dfb.png)
 
-If file was not selected or file is not .txt appropriate messagebox will be displayed. Window thats opens up automaticly shows only .txt files but user can manually change the filter to all files. This works like that because .Filter property is set to `"txt files (*.txt)|*.txt|All files (*.*)|*.*"`.
+If file was not selected or file was not .txt type, appropriate messagebox would be displayed. Window thats opens up automaticly shows only .txt files but user can manually change the filter to all types of files. This works like that because **.Filter** property is set to `"txt files (*.txt)|*.txt|All files (*.*)|*.*"`.
 ```c#
 private void button1_Click(object sender, EventArgs e)
         {
@@ -63,6 +63,9 @@ private void button1_Click(object sender, EventArgs e)
         }
 ```
 # 2. Calculating and displaying values
+
+![image](https://user-images.githubusercontent.com/87483058/171727993-db055bf8-adf5-40a0-adec-131e498a0caf.png)
+
 Part of code responsible for calculating each value and put it into right textbox. Variables `sum` & `pom` are class attributes.
 ```c#
 public void calculateValues()
@@ -91,13 +94,15 @@ public void calculateValues()
             textBoxMinValues.Text = minValue.ToString();
         }
 ```
-Property **ReadOnly** is set to **true** for all of the textboxes. This means values can't be modified by user.
+Property **ReadOnly** is set to **true** for all of the textboxes. That means values can't be modified by user.
 
 ![image](https://user-images.githubusercontent.com/87483058/171498624-78853d12-85a5-47f9-b439-2455a1ddf3a5.png)
 
 # 3. Chart
+
 ![Zrzut ekranu 2022-05-23 213958](https://user-images.githubusercontent.com/87483058/169895679-6845b828-864a-4997-bbdd-09680ac74d07.png)
-Creating new object called wykres (class **Wykres** inherits from class **Form**) this means that new window is created. Object **wykres** is new window in which chart is shown.
+
+Creating new object called wykres (class **Wykres** inherits from class **Form**) it means that new window is created. Object **wykres** is new window in which chart is shown.
 ```c#
 private void button2_MouseClick(object sender, MouseEventArgs e)
         {
@@ -105,7 +110,7 @@ private void button2_MouseClick(object sender, MouseEventArgs e)
             wykres.Show(); //opening window
         }
 ```
-Declaring variables 
+Declaring variables in class **Wykres**
 ```c#
 public static Legend legend;
 public static Series s1, s2;
@@ -113,7 +118,7 @@ List<double> samples = new List<double>();
 public static string title;
 public static ChartArea chartArea;
 ```
-Drawing series. Simple for loop that iterates through each sample in array and creates series in result. That code is executed in Wyres_Load method.
+Drawing series is done by simple for loop that iterates through each sample in array and create series in result. That code is executed in Wyres_Load method.
 ```c#
 for (int x = 0; x < samples.Count; x++)
         s1.Points.AddXY(x + 1, samples[x]);
@@ -150,13 +155,15 @@ private void Form2_Resize(object sender, System.EventArgs e)
                 menuStrip2.Visible = true;
         }
 ```
-Saving chart to the `.jpg` file
+**Saving chart to the `.jpg` file**
 
 ![image](https://user-images.githubusercontent.com/87483058/171726154-31eadc46-f381-473f-a5e0-1b71cc0daf44.png)
 
+SaveFileDialog appearance:
+
 ![image](https://user-images.githubusercontent.com/87483058/171726061-9c695374-5846-45de-b67b-576f1af21196.png)
 
-If chart window is in focus and `ctrl+S` shortcut will be executed or `Save as...` button will be clicked, new SaveFileDialog window shows up in which `.jpeg` file containing chart can be saved.
+If chart window is in focus and `ctrl+S` shortcut will be executed or `Save as...` button will be clicked, new SaveFileDialog window shows up in which `.jpeg` file containing chart can be saved. Part of code responsible for that:
 ```c#
 private void zapiszJakoToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -170,13 +177,14 @@ private void zapiszJakoToolStripMenuItem_Click(object sender, EventArgs e)
                 string filename = saveFileDialog1.FileName;
                 chart1.SaveImage(filename, ChartImageFormat.Jpeg);
             }
-
         }
 ```
 
 # 4. Saving results to the `.txt` file
 The window automaticlly displays path in which it was closed last time.
+
 ![image](https://user-images.githubusercontent.com/87483058/171725390-2b201b42-d9a5-4f3c-82d3-f4c31d287145.png)
+
 ```c#
 private void zapiszJakoToolStripMenuItem_Click(object sender, EventArgs e)
         {
