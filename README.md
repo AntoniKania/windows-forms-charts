@@ -146,6 +146,7 @@ Hiding side menu if the window get too small. Menu in right side automatically h
 
 ![image](https://user-images.githubusercontent.com/87483058/171502723-1b222ba1-de61-42ab-bbfb-b7162b10f07f.png)
 
+This method is checking if specific values were exceeded during resizing window:
 ```c#
 private void Form2_Resize(object sender, System.EventArgs e)
         {
