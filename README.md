@@ -63,7 +63,7 @@ private void button1_Click(object sender, EventArgs e)
         }
 ```
 # 2. Calculating and displaying values
-Part of code responsible for calculating each value and put it into right textbox.
+Part of code responsible for calculating each value and put it into right textbox. Variables `sum` & `pom` are class attributes.
 ```c#
 public void calculateValues()
         {
@@ -150,7 +150,33 @@ private void Form2_Resize(object sender, System.EventArgs e)
                 menuStrip2.Visible = true;
         }
 ```
-# 4. Saving results to the file
+Saving chart to the `.jpg` file
+
+![image](https://user-images.githubusercontent.com/87483058/171726154-31eadc46-f381-473f-a5e0-1b71cc0daf44.png)
+
+![image](https://user-images.githubusercontent.com/87483058/171726061-9c695374-5846-45de-b67b-576f1af21196.png)
+
+If chart window is in focus and `ctrl+S` shortcut will be executed or `Save as...` button will be clicked, new SaveFileDialog window shows up in which `.jpeg` file containing chart can be saved.
+```c#
+private void zapiszJakoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog1;
+            saveFileDialog1 = new SaveFileDialog();
+            saveFileDialog1.Filter = "JPeg Image|*.jpg";
+
+            DialogResult dr = saveFileDialog1.ShowDialog();
+            if (dr == DialogResult.OK)
+            {
+                string filename = saveFileDialog1.FileName;
+                chart1.SaveImage(filename, ChartImageFormat.Jpeg);
+            }
+
+        }
+```
+
+# 4. Saving results to the `.txt` file
+The window automaticlly displays path in which it was closed last time.
+![image](https://user-images.githubusercontent.com/87483058/171725390-2b201b42-d9a5-4f3c-82d3-f4c31d287145.png)
 ```c#
 private void zapiszJakoToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -167,4 +193,4 @@ private void zapiszJakoToolStripMenuItem_Click(object sender, EventArgs e)
             }
         }
 ```
-Code is written in ToolStripMenuItem method due to shortcut **Ctrl + S** could be used. Saving is manage by using **SaveFileDialog** class. **ShowDialog()** method opens up new window in which user can choose the path where file will be saved.
+Code is written in ToolStripMenuItem method due to shortcut **Ctrl+S** could be used. Saving is manage by using **SaveFileDialog** class. **ShowDialog()** method opens up new window in which user can choose the path where file will be saved. Files can be saved only in `.txt` format because **.Filter** property is set so.
