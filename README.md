@@ -135,7 +135,7 @@ Drawing series is done by simple for loop that iterates through each sample in a
 ```c#
 for (int x = 0; x < samples.Count; x++)
         s1.Points.AddXY(x + 1, samples[x]);
-for(int x2 = 1; x2 < samples.Count; x2++)
+for (int x2 = 1; x2 < samples.Count; x2++)
         s2.Points.AddXY(x2, samples[x2]-samples[x2-1]);
 ```
 
