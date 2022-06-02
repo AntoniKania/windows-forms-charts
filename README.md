@@ -195,8 +195,7 @@ private void zapiszJakoToolStripMenuItem_Click(object sender, EventArgs e)
 ```
 
 # 4. Saving results to the `.txt` file
-<sub>The window automaticlly displays path in which it was closed last time.</sub>
-
+The window automaticlly displays path where it was closed last time.
 ![image](https://user-images.githubusercontent.com/87483058/171725390-2b201b42-d9a5-4f3c-82d3-f4c31d287145.png)
 
 Code is written in ToolStripMenuItem method due to shortcut **Ctrl+S** could be used. Saving is manage by **SaveFileDialog** class. **ShowDialog()** method opens up new window in which user can choose the path where file will be saved. Files can be saved only in `.txt` format because **.Filter** property is set so.
